@@ -1,0 +1,15 @@
+.circuitSlot {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.circuitSlot .flag {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.circuitSlot .buttons {
+    margin-right: 10px;
+}
