@@ -5,9 +5,9 @@
 }
 
 .circuitSlot .flag {
-    width: 100px;
+    width: 200px;
     height: 100px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .circuitSlot .buttons {

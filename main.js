@@ -1,19 +1,72 @@
-const slotsSection = document.getElementById('circuitsSlots');
+const circuitsSlotsSection = document.getElementById('circuitsSlots');
 
 // Array of slot filenames
-const slotFilenames = ['slot1.html', 'slot2.html'];
+const circuitsFiles = [
+    'circuits/Bahrain.html',
+    'circuits/Jeddah.html',
+    'circuits/AlbertPark.html',
+    'circuits/Baku.html',
+    'circuits/Miami.html',
+    'circuits/Imola.html',
+    'circuits/Monaco.html',
+    'circuits/Barcelona.html',
+    'circuits/GillesVilleneuve.html',
+    'circuits/RedBullRing.html',
+    'circuits/Silverstone.html',
+    'circuits/Hungaroring.html',
+    'circuits/Spa.html',
+    'circuits/Zandvoort.html',
+    'circuits/Monza.html',
+    'circuits/MarinaBay.html',
+    'circuits/Suzuka.html',
+    'circuits/Lusail.html',
+    'circuits/COTA.html',
+    'circuits/HermanosRodriguez.html',
+    'circuits/Interlagos.html',
+    'circuits/LasVegas.html',
+    'circuits/YasMarina.html',
+];
 
-// Function to fetch and load slot HTML files
 function loadSlots() {
-    slotFilenames.forEach(filename => {
-        fetch(filename)
-            .then(response => response.text())
-            .then(html => {
+    const promises = circuitsFiles.map(filename => {
+        return fetch(filename)
+            .then(response => response.text());
+    });
+
+    Promise.all(promises)
+        .then(htmls => {
+            htmls.forEach((html, index) => {
                 const slotElement = document.createElement('div');
                 slotElement.innerHTML = html;
-                slotsSection.appendChild(slotElement);
+                slotElement.setAttribute('id', `circuit-${index + 1}`);
+                circuitsSlotsSection.appendChild(slotElement);
             });
-    });
+
+            // Check if the URL has a hash (e.g., #slot-1) and scroll to the corresponding slot
+            const hash = window.location.hash;
+            if (hash) {
+                const slotId = hash.replace('#', '');
+                const slot = document.getElementById(slotId);
+                if (slot) {
+                    slot.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            // // Check if the URL has a hash (e.g., #slot-1) and scroll to the corresponding slot
+            // const hash = window.location.hash;
+            // if (hash) {
+            //     const slotId = hash.replace('#', '');
+            //     const slot = document.getElementById(slotId);
+            //     if (slot) {
+            //         slot.scrollIntoView({
+            //             behavior: 'smooth',
+            //             block: 'center',
+            //             inline: 'center',
+            //             scrollMarginTop: '50vh' // Adjust this value as per your requirements
+            //         });
+            //     }
+            // }
+        });
 }
 
 // Load the slots
