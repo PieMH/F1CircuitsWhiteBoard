@@ -38,7 +38,8 @@ function loadSlots() {
             htmls.forEach((html, index) => {
                 const slotElement = document.createElement('div');
                 slotElement.innerHTML = html;
-                slotElement.setAttribute('id', `circuit-${index + 1}`);
+                const attribute = circuitsFiles[index].replace('circuits/', '').replace('.html', '');
+                slotElement.setAttribute('id', `${attribute}`);
                 circuitsSlotsSection.appendChild(slotElement);
             });
 
