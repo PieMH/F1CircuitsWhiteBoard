@@ -1,0 +1,25 @@
+body {
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.links {
+    color: inherit;
+    text-decoration: none;
+}
+
+#circuitsList {
+}
+
+#circuitsSlots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

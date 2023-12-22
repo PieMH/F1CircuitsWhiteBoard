@@ -2,14 +2,59 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .circuitSlot .flag {
-    width: 200px;
-    height: 100px;
-    margin-right: 20px;
+    width: 17vw;
+    height: 10vw;
+    margin: 0 4vw 0;
+    /* max-height: 14vh; */
+    /* max-width: 16vw; */
+    border: black 1px solid;
 }
 
 .circuitSlot .buttons {
-    margin-right: 10px;
+    text-decoration: none;
+    margin: 0 4vw 0;
+    background-color: #111827;
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    /* transition-duration: .2s; */
+    /* transition-property: background-color,border-color,color,fill,stroke; */
+    /* transition-timing-function: cubic-bezier(.4, 0, 0.2, 1); */
+    /* user-select: none; */
+    /* -webkit-user-select: none; */
+    /* touch-action: manipulation; */
+    /* width: auto; */
+}
+.buttons:hover {
+    background-color: #374151;
+}
+.buttons:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+@media (max-width: 700px) {
+    .buttons {
+        padding: .25rem 1rem;
+    }
+}
+
+#circuitName {
+    display: flex;
+    justify-content: center;
 }
