@@ -16,7 +16,10 @@
 }
 
 .circuitSlot .buttons {
-    text-decoration: none;
+    position: relative;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
     margin: 0 4vw 0;
     background-color: #111827;
     border: 1px solid transparent;
@@ -25,10 +28,10 @@
     color: #FFFFFF;
     cursor: pointer;
     flex: 0 0 auto;
-    font-size: 1.125rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    line-height: 1.5rem;
-    padding: .75rem 1.2rem;
+    line-height: 1.75rem;
+    padding: 0.9rem 3rem;
     text-align: center;
     text-decoration: none #6B7280 solid;
     text-decoration-thickness: auto;
@@ -39,6 +42,20 @@
     /* -webkit-user-select: none; */
     /* touch-action: manipulation; */
     /* width: auto; */
+}
+@media screen and (min-width: 1000px) {
+    .circuitSlot .buttons {
+        padding: 2rem 5rem;
+        line-height: 4rem;
+        font-size: 1.25rem;
+    }
+}
+@media screen and (min-width: 2000px) {
+    .circuitSlot .buttons {
+        padding: 2.75rem 7rem;
+        line-height: 5.5rem;
+        font-size: 1.45rem;
+    }
 }
 .buttons:hover {
     background-color: #374151;
